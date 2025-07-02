@@ -1,0 +1,191 @@
+/* === CSS Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Typography === */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  color: hsl(0, 6%, 24%);
+  min-height: 100vh;
+  width: 375px;
+  margin: 0 auto;
+  overflow-y: hidden;
+}
+
+/* === Colors (CSS variables) === */
+:root {
+  /* Primary */
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+
+  /* Neutral */
+  --dark-grayish-red: hsl(0, 6%, 24%);
+
+  /* Gradients */
+  --gradient-white: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient-red: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+  /* fonts family */
+  --font-Josefin: 'Josefin Sans', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+.logo {
+  margin: 2rem;
+  width: 100px;
+}
+.hero-image-desktop {
+  display: none;
+}
+main .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+  gap: 1.5rem;
+}
+main .content > h1 {
+  letter-spacing: 0.9rem;
+  font-weight: 600;
+}
+.first-line {
+  color: var(--desaturated-red);
+  font-weight: 300;
+}
+main div > h1 {
+  font-family: var(--font-Josefin);
+}
+main div p {
+  color: var(--desaturated-red);
+  font-size: 15px;
+}
+main div .input-container {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+main div input {
+  width: 100%;
+  border-radius: 25px;
+  padding: 0.8rem 1rem;
+  outline: none;
+  border: 1px solid #d3d3d3;
+  font-family: var(--font-Josefin);
+  position: relative;
+  z-index: 0;
+}
+.input-container.invalid input {
+  border: 1px solid red;
+}
+.input-container.invalid .error-message {
+  margin: 0.8rem 1rem;
+  color: red;
+  text-align: left;
+  opacity: 1;
+}
+.error-message {
+  opacity: 0;
+}
+.submit-button {
+  height: calc(1.6rem + 16px);
+  width: 4.5rem;
+  background: var(--gradient-red);
+  border: var(--gradient-red);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  z-index: 1000;
+}
+.submit-button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  box-shadow: 0 10px 15px 0 #575757;
+}
+.input-container.invalid .error-icon {
+  position: absolute;
+  top: 0.6rem;
+  right: 26%;
+  opacity: 1;
+}
+.error-icon {
+  opacity: 0;
+}
+
+main div input::placeholder {
+  color: #d3d3d3;
+}
+
+/* === Utility classes === */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Responsive Handling */
+@media (min-width: 1280px) {
+  body {
+    width: 100%;
+  }
+  .hero-image-desktop {
+    display: block;
+  }
+
+  .hero-image-mobile {
+    display: none;
+  }
+  .logo {
+    width: fit-content;
+    margin: 2.75rem;
+  }
+  main {
+    display: flex;
+    justify-content: space-between;
+    background: url(/images/bg-pattern-desktop.svg);
+  }
+  .left {
+    width: 450px;
+    margin: 0 auto;
+  }
+  main .content {
+    justify-content: start;
+    align-items: start;
+    text-align: start;
+    font-weight: 400;
+  }
+  main .content h1 {
+    font-size: 4rem;
+  }
+  main div input {
+    padding: 1.1rem 1.3rem;
+  }
+  .submit-button {
+    height: calc(2.2rem + 16px);
+    width: 5.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1px;
+    right: 0px;
+  }
+  .input-container.invalid .error-icon {
+    top: 0.8rem;
+    right: 28%;
+  }
+}

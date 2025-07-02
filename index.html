@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="left">
+        <div><img class="logo" src="images/logo.svg" alt="logo" /></div>
+        <div class="hero-image-mobile">
+          <img src="images/hero-mobile.jpg" alt="image-mobile" />
+        </div>
+        <div class="content">
+          <h1>
+            <span class="first-line">WE'RE</span><br />
+            <span>COMING</span><br />
+            <span>SOON</span>
+          </h1>
+          <p>
+            Hello fellow shoppers! We're currently building our new fashion store. Add your email
+            below to stay up-to-date with announcements and our launch deals.
+          </p>
+          <form class="input-container" novalidate>
+            <input type="email" placeholder="Email Address" required />
+            <button class="submit-button" type="submit">
+              <img src="images/icon-arrow.svg" alt="button" />
+            </button>
+            <p class="error-message">Please provide a valid email!</p>
+            <span class="error-icon"><img src="images/icon-error.svg" alt="error-icon" /></span>
+          </form>
+        </div>
+      </div>
+
+      <div class="hero-image-desktop right">
+        <img src="images/hero-desktop.jpg" alt="image-desktop" />
+      </div>
+    </main>
+
+    <!-- <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer> -->
+    <script>
+      const form = document.querySelector('form');
+      const input = document.querySelector('input');
+      const errorMassage = document.querySelector('.error-message');
+      const errorIcon = document.querySelector('.error-icon');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (!input.checkValidity()) {
+          form.classList.add('invalid');
+          errorIcon.classList.add('invalid');
+          errorMassage.classList.add('invalid');
+        } else {
+          form.classList.remove('invalid');
+          errorIcon.classList.add('invalid');
+          errorMassage.classList.add('invalid');
+        }
+      });
+    </script>
+  </body>
+</html>
