@@ -156,20 +156,25 @@ main div input::placeholder {
   main {
     display: flex;
     justify-content: space-between;
-    background: url(/images/bg-pattern-desktop.svg);
+    background: url(../images/bg-pattern-desktop.svg);
   }
   .left {
-    width: 450px;
-    margin: 0 auto;
+    width: 480px;
+    margin: 50px auto;
   }
   main .content {
     justify-content: start;
     align-items: start;
     text-align: start;
-    font-weight: 400;
+    font-weight: 600;
+    gap: 2rem;
   }
   main .content h1 {
     font-size: 4rem;
+  }
+  main div p {
+    line-height: 1.5rem;
+    font-size: 0.9rem;
   }
   main div input {
     padding: 1.1rem 1.3rem;
@@ -183,6 +188,7 @@ main div input::placeholder {
     position: absolute;
     top: 1px;
     right: 0px;
+    box-shadow: 0 10px 20px 0 #b9b9b9;
   }
   .input-container.invalid .error-icon {
     top: 0.8rem;
